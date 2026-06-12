@@ -1,0 +1,6 @@
+# Infrastructure files excluded from GitHub language statistics:
+# launch files, packaging boilerplate and ament test templates are
+# configuration, not application code.
+**/launch/*.py linguist-vendored
+**/setup.py linguist-vendored
+**/test/test_*.py linguist-vendored
