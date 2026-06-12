@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>operator_gui</name>
+  <version>1.0.0</version>
+  <description>
+    Full-screen PyQt5 operator status display. Shows current zone (colour-coded),
+    speed percentage, and collaborative / non-collaborative mode.
+    Readable from 3 m on a lab monitor.
+  </description>
+  <maintainer email="dmog1408@gmail.com">dmitrii-ognev</maintainer>
+  <license>MIT</license>
+
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>python3-pyqt5</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

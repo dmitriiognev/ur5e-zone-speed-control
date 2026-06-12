@@ -1,0 +1,18 @@
+speed_controller:
+  ros__parameters:
+
+    # --- Zones ---
+    num_zones: 5
+
+    # --- Perception watchdog ---
+    skeleton_timeout: 1.0
+    watchdog_rate: 10.0
+
+    # --- UR interface ---
+    speed_slider_service: '/io_and_status_controller/set_speed_slider'
+
+    # --- Topics ---
+    zone_topic: '/operator/zone'
+    skeleton_topic: '/pose/operator_skeleton'
+    collaborative_mode_topic: '/operator/collaborative_mode'
+    paused_topic: '/motion/paused'

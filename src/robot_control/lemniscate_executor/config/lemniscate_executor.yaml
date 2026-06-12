@@ -1,0 +1,27 @@
+lemniscate_executor:
+  ros__parameters:
+
+    # --- MoveIt ---
+    planning_group: 'ur5e_arm'
+
+    # --- Lemniscate geometry ---
+    centre.x: 1.19
+    centre.y: 0.20
+    centre.z: 0.50
+    centre.roll: -3.14159265
+    centre.pitch: 1.5707963
+    centre.yaw: 1.5707963
+    amplitude.x: 0.30
+    amplitude.z: 0.20
+    samples_per_loop: 200
+
+    # --- Trajectory ---
+    nominal_velocity_scale: 0.25
+    num_cycles: 10
+    dt: 0.01
+
+    # --- Interfaces ---
+    controller_name: 'scaled_joint_trajectory_controller'
+    paused_topic: '/motion/paused'
+    collaborative_mode_topic: '/operator/collaborative_mode'
+    speed_slider_service: '/io_and_status_controller/set_speed_slider'

@@ -1,0 +1,11 @@
+operator_gui_node:
+  ros__parameters:
+
+    # --- Topics ---
+    zone_topic: '/operator/zone'
+    paused_topic: '/motion/paused'
+    collaborative_mode_topic: '/operator/collaborative_mode'
+    speed_scaling_topic: '/speed_scaling_state_broadcaster/speed_scaling'
+
+    # --- QoS ---
+    qos_depth: 10

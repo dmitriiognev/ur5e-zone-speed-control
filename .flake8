@@ -1,0 +1,7 @@
+[flake8]
+extend-exclude = .venv
+extend-ignore = B902,C816,D,I202
+import-order-style = google
+max-line-length = 100
+show-source = true
+statistics = true

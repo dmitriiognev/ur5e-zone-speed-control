@@ -1,0 +1,31 @@
+pose_detector_node:
+  ros__parameters:
+    resolution: 'sd'
+    model_type: 'full'
+
+    # --- Output topics ---
+    annotated_image_topic: '/pose/annotated_image'
+    skeleton_markers_topic: '/pose/skeleton_3d'
+    operator_skeleton_topic: '/pose/operator_skeleton'
+
+    # --- Frames ---
+    target_frame: 'world'
+    camera_optical_frame: 'kinect2_rgb_optical_frame'
+
+    # --- MediaPipe detection ---
+    min_pose_detection_confidence: 0.5
+    min_pose_presence_confidence: 0.5
+    min_tracking_confidence: 0.5
+    min_visibility: 0.1
+
+    # --- Depth filtering ---
+    spatial_window_radius: 2
+    temporal_window_size: 5
+    iir_alpha: 0.3
+    max_stale_frames: 10
+    global_outlier_threshold: 0.6
+
+    # --- Synchronization / QoS ---
+    sync_queue_size: 10
+    sync_slop: 0.05
+    qos_depth: 10

@@ -1,0 +1,15 @@
+# colcon workspace artifacts
+build/
+install/
+log/
+
+# MediaPipe models downloaded separately (see kinect_pose_detector README)
+*.task
+
+# IDE
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/

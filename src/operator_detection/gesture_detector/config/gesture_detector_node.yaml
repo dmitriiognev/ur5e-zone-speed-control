@@ -1,0 +1,13 @@
+gesture_detector_node:
+  ros__parameters:
+
+    # --- Gesture ---
+    hold_frames: 20
+    raise_margin: 0.05
+
+    # --- Topics ---
+    operator_skeleton_topic: '/pose/operator_skeleton'
+    collaborative_mode_topic: '/operator/collaborative_mode'
+
+    # --- QoS ---
+    qos_depth: 10

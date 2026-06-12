@@ -1,0 +1,32 @@
+operator_zones_node:
+  ros__parameters:
+
+    # --- Robot base ---
+    robot_base_frame: 'ur5e_base_link'
+    robot_base_x: 1.05
+    robot_base_y: 0.69
+    robot_base_z: 0.01
+
+    # --- Zones ---
+    danger_radius: 0.5
+    workspace_radius: 2.6
+    num_zones: 5
+    tracked_joints:
+      - LEFT_WRIST
+      - RIGHT_WRIST
+      - LEFT_SHOULDER
+      - RIGHT_SHOULDER
+      - LEFT_HIP
+      - RIGHT_HIP
+      - NOSE
+
+    # --- Frames ---
+    reference_frame: 'world'
+
+    # --- Topics ---
+    operator_skeleton_topic: '/pose/operator_skeleton'
+    zone_topic: '/operator/zone'
+    zone_markers_topic: '/operator/zone_markers'
+
+    # --- QoS ---
+    qos_depth: 10

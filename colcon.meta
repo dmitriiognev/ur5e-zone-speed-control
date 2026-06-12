@@ -1,0 +1,9 @@
+{
+  "names": {
+    "kinect2_bridge": {
+      "cmake-args": [
+        "-DCMAKE_CXX_FLAGS=-DDEPTH_REG_CPU"
+      ]
+    }
+  }
+}

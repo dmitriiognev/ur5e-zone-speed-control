@@ -1,0 +1,20 @@
+flag_grasper_node:
+  ros__parameters:
+
+    # --- Flag geometry ---
+    flag_thickness_mm: 3.0
+    gripper_max_aperture_mm: 85.0
+
+    # --- Wrist rotation ---
+    wrist_rotation_deg: 90.0
+    wrist_joint_name: 'ur5e_wrist_3_joint'
+
+    # --- Gripper motion ---
+    gripper_speed: 128
+    gripper_force: 100
+
+    # --- MoveIt ---
+    planning_group: 'ur5e_arm'
+
+    # --- Services ---
+    gripper_service: 'gripper_service'

@@ -1,0 +1,76 @@
+launch:
+
+- arg:
+    name: "base_name"
+    default: "kinect2"
+
+- node:
+    pkg: "kinect2_bridge"
+    exec: "kinect2_bridge_node"
+    name: "kinect2_bridge_node"
+    param:
+        - name: "base_name"
+          value: "$(var base_name)"
+
+        - name: "sensor"
+          value: "005077241447"
+
+        # calib_path is left at its default: no per-serial folder exists there, so the
+        # bridge falls back to the sensor's factory calibration
+
+        - name: "publish_tf"
+          value: true
+
+        - name: "base_name_tf"
+          value: "$(var base_name)"
+
+        - name: "fps_limit"
+          value: 30.0
+
+        - name: "use_png"
+          value: false
+
+        - name: "depth_method"
+          value: "cpu"
+
+        - name: "reg_method"
+          value: "cpu"
+
+        - name: "max_depth"
+          value: 12.0
+
+        - name: "min_depth"
+          value: 0.1
+
+        - name: "queue_size"
+          value: 5
+
+        # Disable built-in filters - use raw depth and apply our own filters
+        # (bilateral/edge_aware drop FPS from 30 to 10, too slow)
+        - name: "bilateral_filter"
+          value: false
+
+        - name: "edge_aware_filter"
+          value: false
+
+        - name: "worker_threads"
+          value: 4
+
+# Point cloud for SD (raw IR/depth resolution - no calibration needed)
+- node:
+    pkg: "depth_image_proc"
+    exec: "point_cloud_xyzrgb_node"
+    name: "$(var base_name)_points_xyzrgb_qhd"
+    remap:
+    -
+      from: "rgb/camera_info"
+      to: "/$(var base_name)/qhd/camera_info"
+    -
+      from: "rgb/image_rect_color"
+      to: "/$(var base_name)/qhd/image_color_rect"
+    -
+      from: "depth_registered/image_rect"
+      to: "/$(var base_name)/qhd/image_depth_rect"
+    -
+      from: "points"
+      to: "/$(var base_name)/qhd/points"
